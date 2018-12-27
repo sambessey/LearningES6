@@ -34,7 +34,7 @@ const promiseBeforeMakingCharacters = () => new Promise((resolve, reject) => {
   if (somenumber<1){resolve(somenumber);}
   throw new Error("One DOES equal one, dummy!");
   });
-
+//hi
 
 let mainCharacter;
 let startingLevelRange = [1,4]
