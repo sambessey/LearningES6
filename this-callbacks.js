@@ -53,7 +53,7 @@ promiseBeforeMakingCharacters()
       spellstatus = `with a potency of ${mainCharacter.potency}`;
     }
   })
-
+//hi
   .then(() => {
   console.log(`our hero is ${mainCharacter.name}. He has a spell of ${mainCharacter.spell} ${spellstatus}`)
 //  MagicalMage.writeBack();
