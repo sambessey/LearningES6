@@ -1,5 +1,14 @@
-const promiseThatResolves = () => new Promise((resolve, reject) => {
-  resolve();
+const promiseThatResolves = b => new Promise((resolve, reject) => {
+  console.log(b);
+  var a = Math.random();
+  if (a<0.5)
+  {
+    setTimeout(()=>resolve(a), 3000);
+  }
+  else {
+    throw new Error;
+  }
+  //return promise;
 });
 
 // Leads to UnhandledPromiseRejection
@@ -12,10 +21,15 @@ const promiseThatResolves = () => new Promise((resolve, reject) => {
 //The block above CAN catch the error on the callback from the promise in promiseThatResolves though.
 
 // Proper error handling
-promiseThatResolves()
-  .then(() => {
-    throw new Error();
+promiseThatResolves("Sam")
+  .then(a => {
+    console.log("Resolved!"+a)
+    //throw new Error();
   })
+
+//  then(function(result) {
+    // you can access the result from the promise here
+//});
   .catch(err => console.log("FAIL"+err));
 
 //So here we have a call to a promise that will ALWAYS fail at the executor
